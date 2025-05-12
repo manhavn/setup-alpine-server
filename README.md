@@ -114,6 +114,7 @@ cd "$(dirname "$0")"
 	apk add bash-doc
 	apk add bash-completion
 	apk add sudo
+	apk add gcompat libstdc++ # vscode
 	nano /etc/passwd # root:x:0:0:root:/root:/bin/bash
 	exit
 	nano install-bash-autosuggestions.sh
