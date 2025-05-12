@@ -114,7 +114,10 @@ cd "$(dirname "$0")"
 	apk add bash-doc
 	apk add bash-completion
 	apk add sudo
-	apk add gcompat libstdc++ # vscode
+
+	apk add gcompat libstdc++ # vscode + curl git
+	echo "AllowTcpForwarding yes" > /etc/ssh/sshd_config.d/vscode-allow-tcp-forward.conf # vscode config
+
 	# rm go1.24.3.linux-arm64.tar.gz; wget https://go.dev/dl/go1.24.3.linux-arm64.tar.gz; rm -rf /usr/local/go; tar -C /usr/local -xzf go1.24.3.linux-arm64.tar.gz; echo 'export PATH=$PATH:/usr/local/go/bin' > /etc/profile.d/go.sh; echo 'export GOROOT=/usr/local/go' >> /etc/profile.d/go.sh
 	go version
 	nano /etc/passwd # root:x:0:0:root:/root:/bin/bash
